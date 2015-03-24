@@ -1,6 +1,12 @@
 
 import math
 
+def shift180(degree):
+    degree+=180
+    if degree>360:
+        degree-=360
+    return(degree)
+
 class Shape():
     def drawShape(self,degree):
         x,y=self.shape(degree)
@@ -55,6 +61,15 @@ class Shape():
         y=math.sin(math.radians(degree))*vect
         return(int(self.xPosition+x),int(self.yPosition+y))
 
+class Bob(Shape):
+    def __init__(self,position=(50,50),radius=25):
+        self.size=radius
+        self.xPosition=position[0]
+        self.yPosition=position[1]
+    def shape(self,degree):
+        x=math.cos(math.radians(degree))*self.size+math.cos(math.radians(degree*4))*self.size/2
+        y=math.sin(math.radians(degree))*self.size+math.sin(math.radians(degree*4))*self.size/2
+        return(x,y)
 
 class Circle(Shape):
     def __init__(self,position=(50,50),radius=25):

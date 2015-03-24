@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
 running = True
 
-bigCircle = shapes.Circle()
+bigCircle = shapes.Bob()
 bigCircleCopy = shapes.Circle()
 smallCircle = shapes.Circle(radius=25)
 square = shapes.Square(position=(250,250),radius=100)
