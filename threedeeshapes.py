@@ -6,7 +6,7 @@ colourCoo=1
 
 class Shape():
     def __init__(self,radius=25,position=(127,127,32)):
-        self.position=position
+        self.position=[position[0],position[1],position[2]]
         self.radius=25
         self.average=.5
         self.max=-10
